@@ -1,9 +1,11 @@
-n = [15, 2, 1, 5, 3]
+customers = [15, 2, 1, 5, 3] 
+customers.sort() 
+satisfied_customers = 0
 
-steps = 0
-sort_n = sorted(n, reverse=True)
-for index, item in enumerate(n):
-    if item != sort_n[index]:
-        steps += 1
+cumulative_waittime = 0 
+for i in customers:
+    if cumulative_waittime<= i :
+        satisfied_customers += 1
+        cumulative_waittime+=i
 
-print(steps)
+print(satisfied_customers)
